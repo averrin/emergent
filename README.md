@@ -13,3 +13,8 @@ https://github.com/averrin
 
 ## Deployed version
 http://emergent.averr.in
+
+## Russian comments
+Впадлу переводить=)
+
+Так вот, на коммит хуком дергается deploy.sh. Если заглянуть туда, то видно, что в окружение ставится requirements.txt. Джанга пока не стоит, но, наверное, сейчас подниму.
