@@ -59,17 +59,6 @@ a {
 }
 
 .gh-button {
-    vertical-align: middle;
-    margin-left: 12px;
-}
-
-.description {
-    color: #101010;
-    font: 16px Monaco, Consolas, mono
-    margin-top: 10%;
-    width: 60%;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 20px;  
-    padding: 10px; 
+    display: inline-block;
+    vertical-align: bottom;
 }
