@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Zen</title>
-        <style type="text/css">
-            p {
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="wrapper">
-            <p>{{ message }}</p>
-        </div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block page %}
+    <p>{{ message }}</p>
+    {%include "_partials/disqus.html"%}
+{% endblock page %}
