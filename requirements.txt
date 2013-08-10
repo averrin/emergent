@@ -1,2 +1,4 @@
 requests
 bottle
+django
+Werkzeug
