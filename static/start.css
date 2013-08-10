@@ -33,10 +33,13 @@ a {
     color: #0080ff;
 }
 
+p {
+    margin: 0 0 20px;
+}
+
 .titlebar {
     color: #101010;
-    font: 16px Monaco, Consolas, monospace;
-    margin-top: 20%;
+    font: 16px/20px Monaco, Consolas, monospace;
     text-align: center;
 }
 
@@ -55,10 +58,19 @@ a {
         0 10px 10px rgba(0,0,0,0.2);
     display: inline-block;
     margin: 0;
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .gh-button {
     display: inline-block;
     vertical-align: bottom;
+}
+
+.page {
+    background: #fff;
+    color: #101010;
+    font: 16px/20px Monaco, Consolas, monospace;
+    margin: 30px auto 0;
+    max-width: 900px;
+    padding: 30px 20px 10px;
 }
