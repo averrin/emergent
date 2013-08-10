@@ -8,8 +8,10 @@ html {
 
 body {
     color: #fbfbfb;
+    font-family: 'Open Sans', 'Segoe UI', 'Droid Sans', sans-serif;
     margin: 0;
     text-rendering: optimizeLegibility;
+    -ms-overflow-style: scrollbar;
 }
 
 h1 {
@@ -65,10 +67,11 @@ p { margin: 0 0 20px; }
 .page {
     background: #fff;
     color: #101010;
-    font: 16px/20px Monaco, Consolas, monospace;
+    font-size: 14px;
+    line-height: 20px;
     margin: 30px auto 0;
     max-width: 900px;
-    padding: 30px 20px 10px;
+    padding: 20px 20px 5px;
 }
 
 .signup-wrap { text-align: center; }
@@ -81,9 +84,6 @@ p { margin: 0 0 20px; }
     background-image: -ms-linear-gradient(top, #8fc800 0%, #438c00 50%);
     background-image: linear-gradient(top, #8fc800 0%, #438c00 50%);
     background-size: auto 200%;
-    border: 1px solid #8fc800;
-    border-radius: 10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     color: #fff;
     display: inline-block;
     font-size: 24px;
@@ -98,7 +98,9 @@ p { margin: 0 0 20px; }
     transition: background-position 250ms;
 }
 
-.signup-btn small { font-size: 16px; }
+.signup-btn small {
+    font-size: 16px;
+}
 
 .signup-btn:hover { background-position: 0 50%; }
 .signup-btn:active { top: 2px; }
