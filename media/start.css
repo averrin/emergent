@@ -57,3 +57,8 @@ a {
     margin: 0;
     padding: 10px;
 }
+
+.gh-button {
+    vertical-align: middle;
+    margin-left: 12px;
+}
