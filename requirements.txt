@@ -2,3 +2,5 @@ requests
 bottle
 django
 Werkzeug
+django_extensions
+flup
