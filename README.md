@@ -10,6 +10,8 @@ We decided to use Django on this stage. There is a basic Django installation rea
 
 We are at the very beginning right now and it's not very clear how to interact with the server. So if you need specific configurations or libraries feel free to write directly to the author https://github.com/averrin
 
+Now database is Sqlite. Django admin's creds - admin:admin.
+
 ## Github
 https://github.com/averrin
 
