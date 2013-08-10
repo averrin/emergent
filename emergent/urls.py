@@ -1,6 +1,7 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
-from views import *
+from views import index, status
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,6 +11,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', index),
     url(r'^status$', status),
+    url(r'^(favicon\.ico)$', 'django.views.static.serve',
+        {'document_root': settings.STATIC_ROOT}),
     # url(r'^emergent_dev/', include('emergent_dev.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
