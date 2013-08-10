@@ -8,7 +8,7 @@ from views import *
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^$', index),
     url(r'^status$', status),
     # url(r'^emergent_dev/', include('emergent_dev.foo.urls')),
 
