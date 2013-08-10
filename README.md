@@ -6,7 +6,8 @@ Emergent is an experimental project with a full access for everyone. Send a pull
 It's supposed to be written in Python. This may change during the process of evolution.
 
 ## Libraries and server configurations
-There is a tiny framework (Bottle) installed on the server.
+We decided to use Django on this stage. There is a basic Django installation ready to use. Python requirements are installing automatically from requirements.txt.
+
 We are at the very beginning right now and it's not very clear how to interact with the server. So if you need specific configurations or libraries feel free to write directly to the author https://github.com/averrin
 
 ## Github
@@ -14,8 +15,3 @@ https://github.com/averrin
 
 ## Deployed version
 http://emergent.averr.in
-
-## Russian comments
-Впадлу переводить=)
-
-Поставил свежую Джангу. Настроил на скорую руку, ибо на природу собираюсь. Сейчас настрою чтобы деплоилось хорошо и укачу. Зависимости из requiremants ставятся автоматом.
