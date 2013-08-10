@@ -1,0 +1,59 @@
+html {
+    background: #ddd4c4 url(pictures/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    color: #fbfbfb;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    color: #fff;
+    font: 700 96px/100px "Trebuchet MS", sans-serif;
+    margin: 0;
+    padding-bottom: 25px;
+    text-shadow:
+        0 1px rgb(225,225,225),
+        0 2px rgb(205,205,205),
+        0 3px rgb(185,185,185),
+        0 0 5px rgba(0,0,0,0.1),
+        0 1px 3px rgba(0,0,0,0.3),
+        0 3px 5px rgba(0,0,0,0.2),
+        0 5px 10px rgba(0,0,0,0.25),
+        0 6px 1px rgba(0,0,0,0.1),
+        0 10px 10px rgba(0,0,0,0.2);
+}
+
+a {
+    color: #0080ff;
+}
+
+.titlebar {
+    color: #101010;
+    font: 16px Monaco, Consolas, monospace;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.titlebar p {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow:
+        0 1px rgb(225,225,225),
+        0 2px rgb(205,205,205),
+        0 3px rgb(185,185,185),
+        0 0 5px rgba(0,0,0,0.1),
+        0 1px 3px rgba(0,0,0,0.3),
+        0 3px 5px rgba(0,0,0,0.2),
+        0 5px 10px rgba(0,0,0,0.25),
+        0 6px 1px rgba(0,0,0,0.1),
+        0 10px 10px rgba(0,0,0,0.2);
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
