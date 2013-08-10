@@ -29,13 +29,9 @@ h1 {
         0 10px 10px rgba(0,0,0,0.2);
 }
 
-a {
-    color: #0080ff;
-}
+a { color: #0080ff; }
 
-p {
-    margin: 0 0 20px;
-}
+p { margin: 0 0 20px; }
 
 .titlebar {
     color: #101010;
@@ -74,3 +70,35 @@ p {
     max-width: 900px;
     padding: 30px 20px 10px;
 }
+
+.signup-wrap { text-align: center; }
+
+.signup-btn {
+    background-color: #8fc800;
+    background-image: -moz-linear-gradient(top, #8fc800 0%, #438c00 50%);
+    background-image: -webkit-linear-gradient(top, #8fc800 0%, #438c00 50%);
+    background-image: -o-linear-gradient(top, #8fc800 0%, #438c00 50%);
+    background-image: -ms-linear-gradient(top, #8fc800 0%, #438c00 50%);
+    background-image: linear-gradient(top, #8fc800 0%, #438c00 50%);
+    background-size: auto 200%;
+    border: 1px solid #8fc800;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: inline-block;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    -webkit-transition: background-position 250ms;
+    -moz-transition: background-position 250ms;
+    -o-transition: background-position 250ms;
+    transition: background-position 250ms;
+}
+
+.signup-btn small { font-size: 16px; }
+
+.signup-btn:hover { background-position: 0 50%; }
+.signup-btn:active { top: 2px; }
