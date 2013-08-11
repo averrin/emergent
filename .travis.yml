@@ -4,10 +4,10 @@ python:
 env:
   - DJANGO_VERSION=1.5.1
 # command to install dependencies
-install: "pip install -r requirements.txt --use-mirrors"
-install: "pip install pep8 --use-mirrors"
 install:
   - pip install -q Django==$DJANGO_VERSION
+  - pip install -r requirements.txt --use-mirrors
+  - pip install pep8 --use-mirrors
 before_script:
   - "pep8 --ignore=E501,E225 ."
 
