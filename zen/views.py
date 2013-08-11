@@ -1,7 +1,17 @@
-from django.shortcuts import render
+# -*- coding: utf-8 -*-
+
 from random import choice
-from .utils import yodaize
-from .zen import MESSAGE
+
+from django.shortcuts import render
+
+from zen.utils import yodaize
+from zen.zen_lines import MESSAGE
+
+
+__all__ = (
+    'index',
+)
+
 
 def index(request):
     message = choice(MESSAGE)
