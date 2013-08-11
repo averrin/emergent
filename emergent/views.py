@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from django.conf import settings
-from emergent.base import render
 import os
+
+from django.conf import settings
+
+from emergent.base import render
 
 
 __all__ = (
