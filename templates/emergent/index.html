@@ -8,4 +8,11 @@
     <p class="signup-wrap"><a href="/status" class="signup-btn">Register now for just ${{price}}.99<br>
     <small>Link to status page. Login required.</small></a></p>
     {%include "_partials/disqus.html"%}
+
+    <script>
+         $("#login_btn").on("click", function(){
+		window.location = "/accounts/login"
+	 })
+    </script>
+
 {% endblock page %}

@@ -45,6 +45,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'djangobower.finders.BowerFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -89,6 +90,12 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'registration',
     'django_extensions',
+    'djangobower',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_PATH, 'components/')
+
+BOWER_INSTALLED_APPS = (
+    'bootstrap',
+)

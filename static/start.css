@@ -7,6 +7,7 @@ html {
 }
 
 body {
+    background-color: transparent;
     color: #fbfbfb;
     font-family: 'Open Sans', 'Segoe UI', 'Droid Sans', sans-serif;
     margin: 0;
@@ -102,3 +103,7 @@ p { margin: 0 0 20px; }
 
 .signup-btn:hover { background-position: 0 50%; }
 .signup-btn:active { top: 2px; }
+
+.navbar {
+	color: #444;
+}

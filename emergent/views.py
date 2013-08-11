@@ -22,3 +22,9 @@ def status(request):
 def profile(request):
     return {}
 
+
+@login_required
+@render("emergent/profile")
+def my_profile(request):
+    return {}
+
