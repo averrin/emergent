@@ -1,1 +1,1 @@
-<a href="{{site}}{% url registration.views.activate activation_key %}">Go to activation</a>
+<a href="{{site}}{% url 'registration.views.activate' activation_key %}">Go to activation</a>

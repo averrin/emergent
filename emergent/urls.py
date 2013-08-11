@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
-from views import index, status
+from views import index, status, profile
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -22,5 +22,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^zen/$', 'zen.views.index', name='zen'),
-    (r'^accounts/', include('registration.backends.default.urls')),
+    (r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^users/.*$', profile, name='profile'),
+
 )

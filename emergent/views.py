@@ -16,3 +16,9 @@ def status(request):
         status = f.read();
     return {"status": status}
     
+
+@login_required
+@render("emergent/profile")
+def profile(request):
+    return {}
+
