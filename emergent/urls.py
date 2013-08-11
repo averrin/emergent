@@ -6,19 +6,11 @@ from emergent.views import index, status
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
+urlpatterns = patterns(
+    '',
     url(r'^$', index),
     url(r'^status$', status),
     url(r'^(favicon\.ico)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_ROOT}),
-    # url(r'^emergent_dev/', include('emergent_dev.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-
     url(r'^zen/$', 'zen.views.index', name='zen'),
 )
