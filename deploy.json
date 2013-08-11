@@ -1,3 +1,5 @@
 {
-	"syncdb": true
+	"syncdb": true,
+	"bower_install": true,
+	"collectstatic": true
 }
