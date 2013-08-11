@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+        <div id="form">
+    <span class="formtitle">Activation
+</span>
+        <p>
+            {%  if account %}
+    Account {{ account }} activated!
+    {% else %}
+    Ooops, error during activation.
+    {% endif %}
+        </p>
+
+    </div>
+
+{% endblock %}
+

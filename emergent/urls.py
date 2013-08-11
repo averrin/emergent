@@ -4,8 +4,8 @@ from django.views.generic import TemplateView
 from views import index, status
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -19,7 +19,8 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 
     url(r'^zen/$', 'zen.views.index', name='zen'),
+    (r'^accounts/', include('registration.backends.default.urls')),
 )

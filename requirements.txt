@@ -4,3 +4,4 @@ django
 Werkzeug
 django_extensions
 flup
+django-registration

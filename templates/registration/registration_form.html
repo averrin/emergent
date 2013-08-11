@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+    {% if invitation_key %}
+        <form method="post" action="{% url registration.views.register %}">
+        {% csrf_token %}
+        <div id="form">
+            <span class="formtitle">Registration</span>
+            <p>
+            {{ form.username }}
+                <span class='label'>:Username</span>
+            </p>
+                        <p>
+            {{ form.email }}
+                <span class='label'>:Email</span>
+            </p>
+                        <p>
+            {{ form.password1 }}
+                <span class='label'>:Password</span>
+            </p>
+                        <p>
+            :And retype your password<br>
+            {{ form.password2 }}
+                <span class='label'>:Again</span>
+            </p>
+            <a class=' button awesome right sendform'>Done</a>
+        </div>
+    </form>
+    {% else %}
+        Hmmm... You did something wrong...
+    {% endif %}
+
+
+{% endblock %}
+

@@ -24,7 +24,7 @@ TIME_ZONE = 'Asia/Omsk'
 
 LANGUAGE_CODE = 'ru-RU'
 
-SITE_ID = 9
+SITE_ID = 1
 
 USE_I18N = USE_L10N = USE_TZ = True
 
@@ -84,8 +84,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'django_extensions'
+    'registration',
+    'django_extensions',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
