@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from django.views.generic import TemplateView
-from views import index, status
+from emergent.views import index, status
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
