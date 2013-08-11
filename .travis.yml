@@ -1,8 +1,16 @@
 language: python
 python:
   - "2.7"
+env:
+  - DJANGO_VERSION=1.5.1
 # command to install dependencies
 install: "pip install -r requirements.txt --use-mirrors"
 install: "pip install pep8 --use-mirrors"
+install:
+  - pip install -q Django==$DJANGO_VERSION
+  - python setup.py -q install
 before_script:
   - "pep8 --ignore=E501,E225 ."
+
+script: nosetests
+
