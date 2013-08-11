@@ -3,3 +3,6 @@ python:
   - "2.7"
 # command to install dependencies
 install: "pip install -r requirements.txt --use-mirrors"
+install: "pip install pep8 --use-mirrors"
+before_script:
+  - "pep8 --ignore=E501,E225 ."
