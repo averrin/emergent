@@ -2,7 +2,7 @@
 
 import requests
 
-from zen.settings import MASHAPE_API_KEY, MASHAPE_API_URL
+from settings import MASHAPE_API_KEY, MASHAPE_API_URL
 
 
 __all__ = (

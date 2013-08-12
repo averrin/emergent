@@ -4,8 +4,8 @@ from random import choice
 
 from django.shortcuts import render
 
-from zen.utils import yodaize
-from zen.zen_lines import MESSAGE
+from utils import yodaize
+from zen_lines import MESSAGE
 
 
 __all__ = (
