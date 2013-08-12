@@ -89,6 +89,10 @@ INSTALLED_APPS = (
     'registration',
     'django_extensions',
     'djangobower',
+    'django_extensions',
+    'emergent',
+    'zen',
+
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
@@ -96,7 +100,4 @@ BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_PATH, 'components/')
 
 BOWER_INSTALLED_APPS = (
     'bootstrap',
-    'django_extensions',
-    'emergent',
-    'zen',
 )
