@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-
 from django.conf import settings
-
 from emergent.base import render
+from django.contrib.auth.decorators import login_required
 
 
 __all__ = (
