@@ -23,5 +23,7 @@ The database of choice is, for now, SQLite. Django admin's credentials are `admi
 ## GitHub
 https://github.com/averrin
 
+[![Build Status](https://travis-ci.org/averrin/emergent.png)](https://travis-ci.org/averrin/emergent)
+
 ## Live site
 http://emergent.averr.in

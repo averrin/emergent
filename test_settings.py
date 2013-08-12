@@ -24,7 +24,7 @@ TIME_ZONE = 'Asia/Omsk'
 
 LANGUAGE_CODE = 'ru-RU'
 
-SITE_ID = 1
+SITE_ID = 9
 
 USE_I18N = USE_L10N = USE_TZ = True
 
@@ -44,7 +44,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -83,19 +82,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'registration',
-    'django_extensions',
-    'djangobower',
-)
-
-ACCOUNT_ACTIVATION_DAYS = 7
-BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_PATH, 'components/')
-
-BOWER_INSTALLED_APPS = (
-    'bootstrap',
     'django_extensions',
     'emergent',
     'zen',
