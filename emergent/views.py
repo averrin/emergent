@@ -18,13 +18,14 @@ def index(request):
     price = random.randint(0, 99)
     return {"price": price}
 
+
 @login_required
 @render("emergent/status")
 def status(request):
     with open(os.path.join(settings.PROJECT_PATH, "status.txt")) as f:
         status = f.read()
     return {"status": status}
-    
+
 
 @login_required
 @render("emergent/profile")
@@ -36,4 +37,3 @@ def profile(request):
 @render("emergent/profile")
 def my_profile(request):
     return {}
-
