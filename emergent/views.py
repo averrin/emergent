@@ -1,39 +1,42 @@
 # -*- coding: utf-8 -*-
 
 import os
+import random
 from django.conf import settings
-from emergent.base import render
-from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
+from braces.views import LoginRequiredMixin
 
 
 __all__ = (
-    'index',
-    'status',
+    'IndexView',
+    'StatusView',
+    'ProfileView',
+    'MyProfileView',
 )
 
 
-@render("emergent/index")
-def index(request):
-    import random
-    price = random.randint(0, 99)
-    return {"price": price}
+class IndexView(TemplateView):
+    template_name = 'emergent/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context["price"] = random.randint(0, 99)
+        return context
 
 
-@login_required
-@render("emergent/status")
-def status(request):
-    with open(os.path.join(settings.PROJECT_PATH, "status.txt")) as f:
-        status = f.read()
-    return {"status": status}
+class StatusView(LoginRequiredMixin, TemplateView):
+    template_name = 'emergent/status.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(StatusView, self).get_context_data(**kwargs)
+        with open(os.path.join(settings.PROJECT_PATH, "status.txt")) as f:
+            context['status'] = f.read()
+        return context
 
 
-@login_required
-@render("emergent/profile")
-def profile(request):
-    return {}
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'emergent/profile.html'
 
 
-@login_required
-@render("emergent/profile")
-def my_profile(request):
-    return {}
+class MyProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'emergent/profile.html'
