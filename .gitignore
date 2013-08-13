@@ -37,3 +37,6 @@ nosetests.xml
 
 # Mac OS X
 .DS_Store
+
+# Bower
+/components
