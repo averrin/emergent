@@ -4,6 +4,7 @@ import os
 from django.conf import settings
 from emergent.base import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 
 
 __all__ = (
@@ -29,11 +30,12 @@ def status(request):
 
 @login_required
 @render("emergent/profile")
-def profile(request):
-    return {}
+def profile(request, username):
+    profile = get_user_model().objects.get(username=username)
+    return {"profile": profile}
 
 
 @login_required
 @render("emergent/profile")
 def my_profile(request):
-    return {}
+    return {"profile": request.user}

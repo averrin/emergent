@@ -2,23 +2,27 @@
 
 {% block page %}
 
-<img src="/media/avatars/{{user.avatar}}">
+<img src="/media/avatars/{{profile.avatar}}">
 
-Your profile, {{user}}
+{% if user.username == profile.username %}
+It's you, {{user}}
+{%else%}
+Username: {{profile}}
+{% endif %}
 
 <ul>
-<li> Exp: {{user.exp}}</li> 
-<li> Coins: {{user.credits}}</li> 
+<li> Exp: {{profile.exp}}</li> 
+<li> Coins: {{profile.credits}}</li> 
 <li> Guilds: 
 <ul>
-	{% for guild in user.guilds.all %}
+	{% for guild in profile.guilds.all %}
 	<li>{{guild.name}}</li>
 	{% endfor %}
 </ul>
 </li>
 <li> Titles: 
 <ul>
-	{% for title in user.titles.all %}
+	{% for title in profile.titles.all %}
 	<li>{{title.name}}</li>
 	{% endfor %}
 </ul>

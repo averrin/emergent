@@ -18,6 +18,6 @@ urlpatterns = patterns(
     url(r'^zen/$', 'zen.views.index', name='zen'),
     (r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/$', my_profile, name="me"),
-    url(r'^users/.*$', profile, name='profile'),
+    url(r'^users/(?P<username>.*)/$', profile, name='profile'),
 
 )
