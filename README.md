@@ -4,9 +4,6 @@ Emergent is an experimental project with a full access for everyone.
 Send a pull request and you'll be added as a contributor.
 Main idea is to organize ourselves and create something exciting.
 
-## Programming language
-It's supposed to be written in Python.
-
 ## Libraries and server configurations
 We are at the very beginning right now and it's not very clear how to interact with the server.
 So if you want any specific configuration or libraries feel free to open an issue,
