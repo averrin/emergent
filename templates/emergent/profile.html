@@ -1,5 +1,29 @@
 {% extends "base.html" %}
 
 {% block page %}
+
+<img src="/media/avatars/{{user.avatar}}">
+
 Your profile, {{user}}
+
+<ul>
+<li> Exp: {{user.exp}}</li> 
+<li> Coins: {{user.credits}}</li> 
+<li> Guilds: 
+<ul>
+	{% for guild in user.guilds.all %}
+	<li>{{guild.name}}</li>
+	{% endfor %}
+</ul>
+</li>
+<li> Titles: 
+<ul>
+	{% for title in user.titles.all %}
+	<li>{{title.name}}</li>
+	{% endfor %}
+</ul>
+</li>
+<li></li>
+<li></li>
+</ul>
 {% endblock %}

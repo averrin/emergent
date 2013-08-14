@@ -34,7 +34,12 @@
             {% endif %}
         </ul>
 	{% if user.is_authenticated %}
-            <p class="navbar-text pull-right">Signed in as <a href="/accounts/profile/" class="navbar-link">{{user}}</a></p>
+
+        <ul class="nav navbar-nav pull-right">
+            <li><p class="navbar-text">Signed in as <a href="/accounts/profile/" class="navbar-link">{{user}}</a></p></li>
+		<li>&nbsp;</li>
+            <li><button id="logout_btn" type="button" class="btn btn-default navbar-btn">Log out</button></li>
+	</ul>
         {%else%}
             <button id="login_btn" type="button" class="btn btn-default navbar-btn pull-right">Sign in</button>
         {% endif %}
@@ -60,5 +65,18 @@
         </div>
     </div>
     </body>
+
+
+    <script>
+         $("#login_btn").on("click", function(){
+		window.location = "/accounts/login"
+	 })
+         $("#logout_btn").on("click", function(){
+		window.location = "/accounts/logout"
+	 })
+    </script>
+
+
+
 </html>
 

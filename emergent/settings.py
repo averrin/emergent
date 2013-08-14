@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'emergent',
     'zen',
+    'rpg',
 
 )
 
@@ -101,3 +102,5 @@ BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_PATH, 'components/')
 BOWER_INSTALLED_APPS = (
     'bootstrap',
 )
+
+AUTH_USER_MODEL = 'rpg.Hero'
