@@ -4,9 +4,6 @@ Emergent is an experimental project with a full access for everyone.
 Send a pull request and you'll be added as a contributor.
 Main idea is to organize ourselves and create something exciting.
 
-## Programming language
-It's supposed to be written in Python.
-
 ## Libraries and server configurations
 We are at the very beginning right now and it's not very clear how to interact with the server.
 So if you want any specific configuration or libraries feel free to open an issue,
@@ -19,6 +16,15 @@ Python requirements are installing automatically from
 
 ### SQLite
 The database of choice is, for now, SQLite. Django admin's credentials are `admin:admin`.
+
+## Workflow
+Workflow is under development but we have some notes and rules already:
+
+1. To join the project just send a pull request. You will be added as contributer.
+2. We communicate mostly in Russian. But if you are considering to join us and don't skpeak Russian we can switch to English. PLease let us know here #15.
+3. We love PEP8 and use Travis to keep code clean http://about.travis-ci.org/docs/user/languages/python/
+4. Before starting to work on some feature and after all discussions please create a task and let all members know what are you working on. All commits related to this issue must contain issue number (#000) in commit message.
+5. Create feature branches for non-trivial stuff.
 
 ## GitHub
 https://github.com/averrin
