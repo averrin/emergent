@@ -15,6 +15,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^zen/', include('zen.urls'), name='zen'),
+    url(r'^rpg/', include('rpg.urls'), name='rpg'),
     (r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/$', MyProfileView.as_view(), name="me"),
     url(r'^users/(?P<username>.*)/$', ProfileView.as_view(), name='profile'),

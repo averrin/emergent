@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page %}
 
-<img src="/media/avatars/{{profile.avatar}}">
+<img src="/media/{{profile.avatar}}">
 
 {% if user.username == profile.username %}
 It's you, {{user}}
@@ -11,23 +12,26 @@ Username: {{profile}}
 {% endif %}
 
 <ul>
-<li> Exp: {{profile.exp}}</li> 
-<li> Coins: {{profile.credits}}</li> 
+<li> Exp: {{profile.exp}} [{{ profile.level.id}}] <button class="" id="add_exp">Add exp</button></li> 
+<li> Coins: {{profile.credits}} <button class="" id="add_coin">Add coin</button></li> 
 <li> Guilds: 
-<ul>
+    <ul>
 	{% for guild in profile.guilds.all %}
 	<li>{{guild.name}}</li>
 	{% endfor %}
-</ul>
+    </ul>
 </li>
 <li> Titles: 
-<ul>
+    <ul>
 	{% for title in profile.titles.all %}
 	<li>{{title.name}}</li>
 	{% endfor %}
-</ul>
+    </ul>
 </li>
 <li></li>
 <li></li>
 </ul>
+
+
+<script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
 {% endblock %}
