@@ -21,3 +21,8 @@ urlpatterns = patterns(
     url(r'^users/(?P<username>.*)/$', ProfileView.as_view(), name='profile'),
 
 )
+
+from django.conf import settings
+import os
+if settings.DEBUG:
+    urlpatterns += patterns('', url(r'^media/(.*)$', 'django.views.static.serve', kwargs={'document_root': os.path.join(settings.PROJECT_PATH, 'media')}), )

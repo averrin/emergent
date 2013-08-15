@@ -111,3 +111,8 @@ p { margin: 0 0 20px; }
 .user_info {
     padding-right: 10px;
 }
+.navbar_avatar{
+    width: 32px;
+    margin-top: 10px;
+    margin-right: 12px;
+}
