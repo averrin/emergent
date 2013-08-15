@@ -8,3 +8,4 @@ django-registration
 django-bower
 django-setuptest
 django-braces
+pil
