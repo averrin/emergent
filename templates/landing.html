@@ -46,6 +46,16 @@
 
 
     <div class="container">
+
+        <div class="titlebar">
+            {% block titlebar %}
+                <h1>Project Emergent</h1>
+                <p>GitHub repo: <a href="https://github.com/averrin/emergent">git@github.com:averrin/emergent.git</a>
+                <iframe src="http://ghbtns.com/github-btn.html?user=averrin&repo=emergent&type=fork"
+                    allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20" class="gh-button">
+                </iframe></p>
+            {% endblock titlebar %}
+        </div>
         <div class="page">
             {% block page %}{% endblock page %}
         </div>

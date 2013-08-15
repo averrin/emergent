@@ -24,12 +24,16 @@
         </div>
         <div class="col-lg-9">
             <ul>
-                <li> Exp: {{ profile.exp }} [{{ profile.level.id|default:"0" }}]
+                <li>
+                    <img src="{% static 'icons/exp.png' %}" alt="exp" class="profile_rpg_icon"/>
+                    Exp: {{ profile.exp }}/{{ profile.next_level.exp }} [{{ profile.level.id|default:"0" }}]
                     {% if user.username == profile.username %}
                         <button class="" id="add_exp">Add exp</button>
                     {% endif %}
                 </li>
-                <li> Coins: {{ profile.credits }}
+                <li>
+                    <img src="{% static 'icons/coin.png' %}" alt="coin" class="profile_rpg_icon"/>
+                    Coins: {{ profile.credits }}
                     {% if user.username == profile.username %}
                         <button class="" id="add_coin">Add coins</button>
                     {% else %}
@@ -56,6 +60,10 @@
                 {% endif %}
             </ul>    
         </div>
+        {% if user.username == profile.username %}
+            <button class="btn btn-default pull-right">Edit</button>
+        {% endif %}
     </div>
+
 
 {% endblock %}

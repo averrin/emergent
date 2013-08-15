@@ -6,7 +6,7 @@
     {% endif %}
 </li>
 <li class="user_info">
-    <p class="navbar-text level_info" title="Exp: {{ user.exp }}<br>Coins: {{ user.credits }}">
+    <p class="navbar-text level_info" title="Exp: {{ user.exp }}/{{ user.next_level.exp }}<br>Coins: {{ user.credits }}">
        <a href="/accounts/profile/" class="navbar-link">{{user}} [{{ user.level.id|default:"0" }}]</a>
     </p>
 </li>
