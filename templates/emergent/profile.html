@@ -3,35 +3,46 @@
 
 {% block page %}
 
-<img src="/media/{{profile.avatar}}">
+    {% if profile.avatar %}
+        <img src="/media/{{ profile.avatar }}" class="profile_avatar">
+    {% endif %}
 
-{% if user.username == profile.username %}
-It's you, {{user}}
-{%else%}
-Username: {{profile}}
-{% endif %}
+    {% if user.username == profile.username %}
+        It's you, {{ user }}.
+    {% else %}
+        Username: {{ profile }}
+    {% endif %}
 
-<ul>
-<li> Exp: {{profile.exp}} [{{ profile.level.id}}] <button class="" id="add_exp">Add exp</button></li> 
-<li> Coins: {{profile.credits}} <button class="" id="add_coin">Add coin</button></li> 
-<li> Guilds: 
     <ul>
-	{% for guild in profile.guilds.all %}
-	<li>{{guild.name}}</li>
-	{% endfor %}
+        <li> Exp: {{ profile.exp }} [{{ profile.level.id }}]
+            {% if user.username == profile.username %}
+                <button class="" id="add_exp">Add exp</button>
+            {% endif %}
+        </li>
+        <li> Coins: {{ profile.credits }}
+            {% if user.username == profile.username %}
+                <button class="" id="add_coin">Add coin</button>
+            {% endif %}
+        </li>
+        {% if profile.guilds.all %}
+            <li> Guilds:
+                <ul>
+                    {% for guild in profile.guilds.all %}
+                        <li>{{ guild.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+        {% if profile.titles.all %}
+            <li> Titles:
+                <ul>
+                    {% for title in profile.titles.all %}
+                        <li>{{ title.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
     </ul>
-</li>
-<li> Titles: 
-    <ul>
-	{% for title in profile.titles.all %}
-	<li>{{title.name}}</li>
-	{% endfor %}
-    </ul>
-</li>
-<li></li>
-<li></li>
-</ul>
 
-
-<script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
+    <script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
 {% endblock %}
