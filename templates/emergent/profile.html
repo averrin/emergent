@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block page %}
-    <script type="text/javascript" src='{% static 'profile.css' %}'></script>
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    Даже не брался верстать.
 
     {% if profile.avatar %}
         <img src="/media/{{ profile.avatar }}" class="profile_avatar">
