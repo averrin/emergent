@@ -51,4 +51,3 @@ class MyProfileView(LoginRequiredMixin, TemplateView):
         context = super(MyProfileView, self).get_context_data(**kwargs)
         context['profile'] = self.request.user
         return context
-
