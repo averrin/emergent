@@ -25,4 +25,8 @@ class Hero(AbstractUser):
 
     @property
     def level(self):
-        return Level.objects.filter(exp__lte=self.exp).order_by('exp').reverse()[0]
+        levels = Level.objects.filter(exp__lte=self.exp).order_by('exp').reverse()
+        if levels:
+            return levels[0]
+        else:
+            return None

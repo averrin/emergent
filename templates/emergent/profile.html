@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block page %}
+    <script type="text/javascript" src='{% static 'profile.css' %}'></script>
 
     {% if profile.avatar %}
         <img src="/media/{{ profile.avatar }}" class="profile_avatar">
