@@ -1,0 +1,8 @@
+<li class="user_info">
+    <p class="navbar-text level_info" title="Exp: {{ user.exp }}<br>Coins: {{ user.credits }}">
+        Signed in as <a href="/accounts/profile/" class="navbar-link">{{user}} [{{ user.level.id|default:"0" }}]</a>
+    </p>
+</li>
+<li>
+    <button id="logout_btn" type="button" class="btn btn-default navbar-btn">Log out</button>
+</li>

@@ -16,14 +16,23 @@
     {% endif %}
 
     <ul>
-        <li> Exp: {{ profile.exp }} [{{ profile.level.id }}]
+        <li> Exp: {{ profile.exp }} [{{ profile.level.id|default:"0" }}]
             {% if user.username == profile.username %}
                 <button class="" id="add_exp">Add exp</button>
             {% endif %}
         </li>
+        <li>
+            <div class="progress progress-striped active">
+                <div class="progress-bar"  role="progressbar" aria-valuenow="{{ profile.exp_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ profile.exp_percentage }}%">
+                    <span class='sr-only'>{{ profile.exp_percentage }}% Complete</span>
+                </div>
+            </div>
+        </li>
         <li> Coins: {{ profile.credits }}
             {% if user.username == profile.username %}
-                <button class="" id="add_coin">Add coin</button>
+                <button class="" id="add_coin">Add coins</button>
+            {% else %}
+                <button class="" id="give_coin" data-to="{{ profile.username }}" {% if not profile.credits %}disabled=disabled{% endif %}>Give a coin</button>
             {% endif %}
         </li>
         {% if profile.guilds.all %}
@@ -46,5 +55,4 @@
         {% endif %}
     </ul>
 
-    <script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
 {% endblock %}

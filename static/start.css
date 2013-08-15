@@ -107,3 +107,7 @@ p { margin: 0 0 20px; }
 .navbar {
 	color: #444;
 }
+
+.user_info {
+    padding-right: 10px;
+}
