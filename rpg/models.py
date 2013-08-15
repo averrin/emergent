@@ -40,7 +40,7 @@ class Hero(AbstractUser):
 
     @property
     def next_level(self):
-        next_lvl = Level.objects.filter(pk=int(self.level_no)+1)
+        next_lvl = Level.objects.filter(pk=int(self.level_no) + 1)
         if next_lvl.exists():
             return next_lvl[0]
         else:
