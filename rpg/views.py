@@ -44,3 +44,4 @@ class GiveCoin(JSONResponseMixin, AjaxResponseMixin, View):
             }
 
         return self.render_json_response(json_dict)
+
