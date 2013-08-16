@@ -13,6 +13,13 @@
             "name": "Master"
         }
     },
+        {
+        "pk": 2,
+        "model": "rpg.title",
+        "fields": {
+            "name": "Cheater"
+        }
+    },
     {
         "pk": 1,
         "model": "rpg.level",

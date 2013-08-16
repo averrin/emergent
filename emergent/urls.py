@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from views import IndexView, StatusView, ProfileView, MyProfileView
+from views import IndexView, StatusView, ProfileView, MyProfileView, UserListView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -19,6 +19,7 @@ urlpatterns = patterns(
     (r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/$', MyProfileView.as_view(), name="me"),
     url(r'^users/(?P<username>.*)/$', ProfileView.as_view(), name='profile'),
+    url(r'^users/$', UserListView.as_view(), name='profuserlistile'),
 
 )
 

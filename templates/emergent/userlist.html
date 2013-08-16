@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page %}
+
+    <h3>Users</h3>
+    <ul>
+    {% for profile in users %}
+        <li>{%  if profile.avatar %}
+        <img src="/media/{{ user.avatar }}" class="navbar_avatar">
+    {% else %}
+        <img src="http://lorempixel.com/400/400/cats" class="navbar_avatar"/>
+    {% endif %} <a href="/users/{{profile}}" class="navbar-link">{{profile}} [{{ user.level.id|default:"0" }}]</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
