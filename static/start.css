@@ -11,6 +11,7 @@ body {
     color: #fbfbfb;
     font-family: 'Open Sans', 'Segoe UI', 'Droid Sans', sans-serif;
     margin: 0;
+    padding-top: 70px;
     text-rendering: optimizeLegibility;
     -ms-overflow-style: scrollbar;
 }
@@ -85,13 +86,13 @@ p { margin: 0 0 20px; }
     background-image: -ms-linear-gradient(top, #8fc800 0%, #438c00 50%);
     background-image: linear-gradient(top, #8fc800 0%, #438c00 50%);
     background-size: auto 200%;
-    color: #fff;
+    color: #fff !important;
     display: inline-block;
     font-size: 24px;
     line-height: 24px;
     padding: 10px 20px;
     position: relative;
-    text-decoration: none;
+    text-decoration: none !important;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
     -webkit-transition: background-position 250ms;
     -moz-transition: background-position 250ms;
@@ -104,13 +105,8 @@ p { margin: 0 0 20px; }
 .signup-btn:hover { background-position: 0 50%; }
 .signup-btn:active { top: 2px; }
 
-.navbar {
-	color: #444;
-}
+.user_info { padding-right: 10px; }
 
-.user_info {
-    padding-right: 10px;
-}
 .navbar_avatar{
     width: 32px;
     margin-top: 10px;
