@@ -124,6 +124,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.user.update_user_details',
 )
 
+LOGIN_REDIRECT_URL = '/account/profile/'
 # Social Auth settings {{{
 
 try:
