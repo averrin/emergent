@@ -63,3 +63,12 @@ class MyProfileView(LoginRequiredMixin, TemplateView):
         context = super(MyProfileView, self).get_context_data(**kwargs)
         context['profile'] = self.request.user
         return context
+
+
+class UserListView(LoginRequiredMixin, TemplateView):
+    template_name = 'emergent/userlist.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(UserListView, self).get_context_data(**kwargs)
+        context['users'] = get_user_model().objects.all()
+        return context

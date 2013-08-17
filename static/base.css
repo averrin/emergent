@@ -1,0 +1,19 @@
+.navbar {
+	color: #444;
+	margin-bottom: 0px;
+}
+
+.user_info {
+    padding-right: 10px;
+}
+.navbar_avatar{
+    width: 32px;
+    margin-top: 10px;
+    margin-right: 12px;
+}
+
+.page{
+    margin-top: 0px;
+    padding-top: 40px;
+    height: 100%;
+}

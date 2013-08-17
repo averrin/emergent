@@ -6,7 +6,10 @@
         <title>Project Emergent</title>
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600">
         <link rel="stylesheet" href='{% static "bootstrap/dist/css/bootstrap.css" %}'>
+        <link rel="stylesheet" href='{% static "notify.css" %}'>
+
         <link rel="stylesheet" href="{% static 'start.css' %}">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
     </head>
     <body>
 
@@ -29,6 +32,7 @@
             <li class="active"><a href="/">Home</a></li>
             {% if user.is_authenticated %}
             <li><a href="/status">Status</a></li>
+            <li><a href="/admin">Admin</a></li>
             {% endif %}
         </ul>
 	{% if user.is_authenticated %}
@@ -54,6 +58,8 @@
 
     <script type="text/javascript" src='{% static 'jquery/jquery.js' %}'></script>
     <script type="text/javascript" src='{% static 'bootstrap/dist/js/bootstrap.js' %}'></script>
+    <script type="text/javascript" src='{% static 'notify.js' %}'></script>
+
     <script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
     <script type="text/javascript" src='{% static 'js/main.js' %}'></script>
 

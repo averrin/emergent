@@ -3,6 +3,7 @@ from django.views.generic import View
 from braces.views import AjaxResponseMixin, JSONResponseMixin
 import random
 from django.contrib.auth import get_user_model
+from rpg.models import Title
 
 
 class AddCoin(JSONResponseMixin, AjaxResponseMixin, View):
@@ -41,7 +42,25 @@ class GiveCoin(JSONResponseMixin, AjaxResponseMixin, View):
         else:
             json_dict = {
                 'success': False,
+                'reason': "No money"
             }
 
         return self.render_json_response(json_dict)
 
+
+class BuyView(JSONResponseMixin, AjaxResponseMixin, View):
+    def get_ajax(self, request, *args, **kwargs):
+        if kwargs["item"] == "cheater" and self.request.user.credits >= 5:
+            self.request.user.credits -= 5
+            self.request.user.titles.add(Title.objects.get(name="Cheater"))
+            self.request.user.save()
+            json_dict = {
+                'success': True,
+                'coins': self.request.user.credits
+            }
+        else:
+            json_dict = {
+                'success': False,
+                'reason': "No money"
+            }
+        return self.render_json_response(json_dict)
