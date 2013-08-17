@@ -1,0 +1,15 @@
+<li>
+    {%  if profile.avatar %}
+        <img src="/media/{{ user.avatar }}" class="navbar_avatar">
+    {% else %}
+        <img src="http://lorempixel.com/400/400/cats" class="navbar_avatar"/>
+    {% endif %}
+</li>
+<li class="user_info">
+    <p class="navbar-text level_info" title="Exp: {{ user.exp }}/{{ user.next_level.exp }}<br>Coins: {{ user.credits }}">
+       <a href="/accounts/profile/" class="navbar-link">{{user}} [{{ user.level.id|default:"0" }}]</a>
+    </p>
+</li>
+<li>
+    <button id="logout_btn" type="button" class="btn btn-default navbar-btn">Log out</button>
+</li>
