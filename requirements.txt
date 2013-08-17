@@ -4,7 +4,6 @@ django
 Werkzeug
 django_extensions
 flup
-django-registration
 django-bower
 django-setuptest
 django-braces

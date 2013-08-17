@@ -1,1 +1,0 @@
-Activation email from {{site}}
