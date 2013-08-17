@@ -86,7 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'registration',
+    'social_auth',
     'django_extensions',
     'djangobower',
     'django_extensions',
@@ -104,3 +104,39 @@ BOWER_INSTALLED_APPS = (
 )
 
 AUTH_USER_MODEL = 'rpg.Hero'
+LOGIN_URL = 'login'
+
+# Social Auth settings {{{
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.contrib.github.GithubBackend',
+    'social_auth.backends.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_CREATE_USERS          = True
+SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
+SOCIAL_AUTH_DEFAULT_USERNAME      = 'socialauth_user'
+SOCIAL_AUTH_COMPLETE_URL_NAME     = 'socialauth_complete'
+SOCIAL_AUTH_ERROR_KEY             = 'socialauth_error'
+SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
+
+GITHUB_APP_ID                     = ''
+GITHUB_API_SECRET                 = ''
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+
+    'social_auth.backends.pipeline.user.update_user_details',
+)
+
+# Social Auth settings {{{
+
+try:
+    from local_settings import *
+except:
+    pass

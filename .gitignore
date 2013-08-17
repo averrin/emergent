@@ -40,3 +40,6 @@ nosetests.xml
 
 # Bower
 /components
+
+# Local Settings
+local_settings.py
