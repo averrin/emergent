@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page %}
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h4>  {{ profile }}
+                {% if user.username == profile.username %}
+                    <span class="label">You</span>
+                {% endif %}
+            </h4>
+            {%  if profile.avatar %}
+                <img src="/media/{{ profile.avatar }}" class="profile_avatar">
+            {% else %}
+                <img src="http://lorempixel.com/400/400/cats" class="profile_avatar"/>
+            {% endif %}
+            <div class="progress progress-striped active">
+                <div class="progress-bar"  role="progressbar" aria-valuenow="{{ profile.exp_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ profile.exp_percentage }}%">
+                    <span class='sr-only'>{{ profile.exp_percentage }}% Complete</span>
+                </div>
+            </div>
+            <ul>
+                <li>{{ profile.email }}</li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <a href="{% url 'avatar_change' %}">Change your avatar</a>
+    </div>
+
+
+{% endblock %}

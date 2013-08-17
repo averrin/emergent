@@ -65,12 +65,12 @@
 
 
     <script>
-         $("#login_btn").on("click", function(){
-		window.location = "/accounts/login"
-	 })
-         $("#logout_btn").on("click", function(){
-		window.location = "/accounts/logout"
-	 })
+        $("#login_btn").on("click", function(){
+		    window.location = "{% url 'socialauth_begin' 'github' %}"
+	    })
+        $("#logout_btn").on("click", function(){
+		    window.location = "{% url 'auth_logout' %}"
+	    })
     </script>
 
 

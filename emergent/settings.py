@@ -9,13 +9,6 @@ except ImportError:
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_PATH, 'emergent.sqlite3'),
-    }
-}
-
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -120,9 +113,6 @@ SOCIAL_AUTH_DEFAULT_USERNAME      = 'socialauth_user'
 SOCIAL_AUTH_COMPLETE_URL_NAME     = 'socialauth_complete'
 SOCIAL_AUTH_ERROR_KEY             = 'socialauth_error'
 SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
-
-GITHUB_APP_ID                     = ''
-GITHUB_API_SECRET                 = ''
 
 SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.social.social_auth_user',

@@ -65,6 +65,15 @@ class MyProfileView(LoginRequiredMixin, TemplateView):
         return context
 
 
+class EditMyProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'emergent/edit_profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(EditMyProfileView, self).get_context_data(**kwargs)
+        context['profile'] = self.request.user
+        return context
+
+
 class UserListView(LoginRequiredMixin, TemplateView):
     template_name = 'emergent/userlist.html'
 
