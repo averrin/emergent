@@ -108,4 +108,4 @@ AUTH_USER_MODEL = 'rpg.Hero'
 try:
     from local_settings import *
 except:
-    pass 
+    pass
