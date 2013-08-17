@@ -4,24 +4,28 @@ from django.contrib.auth.models import AbstractUser
 
 class Guild(models.Model):
     name = models.CharField(max_length=40, unique=True, db_index=True)
+    owner = models.ForeignKey('Hero')
+
+    def __unicode__(self):
+        return self.name
 
 
 class Title(models.Model):
     name = models.CharField(max_length=40, unique=True, db_index=True)
-
+    def __unicode__(self):
+        return self.name
 
 class Level(models.Model):
     exp = models.IntegerField()
-
+    def __unicode__(self):
+        return "%s [%s]" % (self.id, self.exp)
 
 class Hero(AbstractUser):
-    avatar = models.ImageField(upload_to="avatars", null=True)
-
     exp = models.IntegerField(default=0)
     credits = models.IntegerField(default=0)
 
-    titles = models.ManyToManyField(Title, null=True)
-    guilds = models.ManyToManyField(Guild, null=True)
+    titles = models.ManyToManyField(Title, null=True, blank=True)
+    guilds = models.ManyToManyField(Guild, null=True, blank=True)
 
     @property
     def level(self):
@@ -52,3 +56,6 @@ class Hero(AbstractUser):
             return int((float(self.exp) / float(self.next_level.exp)) * 100)
         else:
             return 0
+
+
+

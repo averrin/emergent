@@ -17,7 +17,7 @@ class HeroAdmin(UserAdmin):
     form = MyUserChangeForm
 
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ("avatar", 'exp', 'credits', "titles", "guilds")}),
+        (None, {'fields': ('exp', 'credits', "titles", "guilds")}),
     )
     list_display = UserAdmin.list_display + ("exp", "level_no", "exp_percentage", 'credits',)
 

@@ -14,6 +14,7 @@ urlpatterns = patterns(
     url(r'^status$', StatusView.as_view(), name='status'),
     url(r'^(favicon\.ico)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_ROOT}),
+    (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^zen/', include('zen.urls'), name='zen'),

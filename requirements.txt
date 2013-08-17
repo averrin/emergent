@@ -9,3 +9,5 @@ django-setuptest
 django-braces
 django-social-auth
 pil
+django-grappelli
+south
