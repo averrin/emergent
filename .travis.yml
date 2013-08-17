@@ -9,6 +9,6 @@ install:
   - pip install -r requirements.txt --use-mirrors
   - pip install pep8 --use-mirrors
 before_script:
-  - "pep8 --ignore=E501,E225,E128 --exclude=registration ."
+  - "pep8 --ignore=E501,E225,E128 ."
 
 script: python setup.py test
