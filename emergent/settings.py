@@ -135,3 +135,8 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 # Social Auth settings {{{
+
+try:
+    from local_settings import *
+except:
+    pass
