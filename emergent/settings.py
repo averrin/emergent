@@ -107,11 +107,11 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_CREATE_USERS          = True
+SOCIAL_AUTH_CREATE_USERS = True
 SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
-SOCIAL_AUTH_DEFAULT_USERNAME      = 'socialauth_user'
-SOCIAL_AUTH_COMPLETE_URL_NAME     = 'socialauth_complete'
-SOCIAL_AUTH_ERROR_KEY             = 'socialauth_error'
+SOCIAL_AUTH_DEFAULT_USERNAME = 'socialauth_user'
+SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
+SOCIAL_AUTH_ERROR_KEY = 'socialauth_error'
 SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
 
 SOCIAL_AUTH_PIPELINE = (

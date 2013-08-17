@@ -25,6 +25,7 @@ class IndexView(TemplateView):
         context["price"] = random.randint(0, 99)
         return context
 
+
 class LoginView(TemplateView):
     template_name = 'emergent/login.html'
 
@@ -33,7 +34,6 @@ class LoginView(TemplateView):
         context['next'] = self.request.GET.get('next', None)
         if self.request.user.is_authenticated():
             return redirect('me')
-            
         return context
 
 
