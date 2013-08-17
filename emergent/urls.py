@@ -2,6 +2,8 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from views import IndexView, StatusView, ProfileView, MyProfileView
 
+from django.contrib.auth import views as auth_views
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -16,8 +18,9 @@ urlpatterns = patterns(
 
     url(r'^zen/', include('zen.urls'), name='zen'),
     url(r'^rpg/', include('rpg.urls'), name='rpg'),
-    (r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^accounts/profile/$', MyProfileView.as_view(), name="me"),
     url(r'^users/(?P<username>.*)/$', ProfileView.as_view(), name='profile'),
+    url(r'^account/', include('social_auth.urls')),
+    url(r'^account/logout/$', auth_views.logout, {'next_page': '/'}, name='auth_logout'),
+    url(r'^account/profile/$', MyProfileView.as_view(), name='me'),
 
 )

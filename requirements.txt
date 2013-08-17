@@ -8,4 +8,5 @@ django-registration
 django-bower
 django-setuptest
 django-braces
+django-social-auth
 pil
