@@ -86,7 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'registration',
+    # 'registration',
     'social_auth',
     'django_extensions',
     'djangobower',
@@ -105,6 +105,7 @@ BOWER_INSTALLED_APPS = (
 )
 
 AUTH_USER_MODEL = 'rpg.Hero'
+LOGIN_URL = 'login'
 
 # Social Auth settings {{{
 
