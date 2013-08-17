@@ -14,8 +14,7 @@ We decided to use Django on this stage. There is a basic Django installation rea
 Python requirements are installing automatically from
 [requirements.txt](https://github.com/averrin/emergent/blob/master/requirements.txt).
 
-### SQLite
-The database of choice is, for now, SQLite. Django admin's credentials are `admin:admin`.
+Django admin's credentials are `admin:admin`
 
 ## Workflow
 Workflow is under development but we have some notes and rules already:
