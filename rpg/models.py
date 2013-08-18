@@ -12,13 +12,17 @@ class Guild(models.Model):
 
 class Title(models.Model):
     name = models.CharField(max_length=40, unique=True, db_index=True)
+
     def __unicode__(self):
         return self.name
 
+
 class Level(models.Model):
     exp = models.IntegerField()
+
     def __unicode__(self):
         return "%s [%s]" % (self.id, self.exp)
+
 
 class Hero(AbstractUser):
     exp = models.IntegerField(default=0)
@@ -56,6 +60,3 @@ class Hero(AbstractUser):
             return int((float(self.exp) / float(self.next_level.exp)) * 100)
         else:
             return 0
-
-
-
