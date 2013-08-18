@@ -14,3 +14,9 @@ GITHUB_APP_ID = ''
 GITHUB_API_SECRET = ''
 
 # }}} Social Auth settings
+
+PUSHER_APPID = ''
+PUSHER_KEY = ''
+PUSHER_SECRET = ''
+
+

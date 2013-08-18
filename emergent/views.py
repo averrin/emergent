@@ -14,6 +14,8 @@ __all__ = (
     'StatusView',
     'ProfileView',
     'MyProfileView',
+    'ChatView',
+    'ChatSendView'
 )
 
 
@@ -95,9 +97,9 @@ class ChatSendView(JSONResponseMixin, AjaxResponseMixin, View):
         import pusher
 
         p = pusher.Pusher(
-            app_id='52066',
-            key='6bb5412badf09454aa87',
-            secret='64834714c694ad3621e4'
+            app_id=settings.PUSHER_APPID,
+            key=settings.PUSHER_KEY,
+            secret=settings.PUSHER_SECRET
         )
         p['test_channel'].trigger('my_event', {
             'message': self.request.POST['message'],

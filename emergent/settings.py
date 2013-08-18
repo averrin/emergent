@@ -141,6 +141,11 @@ LOGIN_REDIRECT_URL = '/account/profile/'
 
 # }}} Social Auth settings
 
+PUSHER_APPID = ''
+PUSHER_KEY = ''
+PUSHER_SECRET = ''
+
+
 try:
     from local_settings import *
 except:
