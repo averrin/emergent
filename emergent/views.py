@@ -99,7 +99,10 @@ class ChatSendView(JSONResponseMixin, AjaxResponseMixin, View):
             key='6bb5412badf09454aa87',
             secret='64834714c694ad3621e4'
         )
-        p['test_channel'].trigger('my_event', {'message': self.request.POST['message']})
+        p['test_channel'].trigger('my_event', {
+            'message': self.request.POST['message'],
+            'user': self.request.user.username
+        })
         json_dict = {
             "success": True
         }

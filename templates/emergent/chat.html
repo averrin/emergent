@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page %}
 <script type='text/javascript' src='http://js.pusher.com/2.1/pusher.min.js'></script>
+
+<link rel="stylesheet" href="{% static 'chat.css' %}"> 
+
+
 <h3>Websocket test:</h3>
     <form id="msg_form">
 	{% csrf_token %}
