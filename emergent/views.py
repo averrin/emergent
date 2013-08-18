@@ -84,7 +84,7 @@ class UserListView(LoginRequiredMixin, TemplateView):
         context['users'] = get_user_model().objects.all()
         return context
 
-class ChatView(TemplateView):
+class ChatView(LoginRequiredMixin, TemplateView):
     template_name = 'emergent/chat.html'
 
     def get_context_data(self, **kwargs):
@@ -92,7 +92,7 @@ class ChatView(TemplateView):
         return context
 
 
-class ChatSendView(JSONResponseMixin, AjaxResponseMixin, View):
+class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
     def post_ajax(self, request, *args, **kwargs):
         import pusher
 
