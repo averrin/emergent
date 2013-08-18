@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block page %}
+<script type='text/javascript' src='http://js.pusher.com/2.1/pusher.min.js'></script>
+<h3>Websocket test:</h3>
+    <form id="msg_form">
+	{% csrf_token %}
+        <input id="msg_text"><input type="submit" value="Send"></input>
+    </form>
+    <div id="events"></div>    
+{% endblock page %}

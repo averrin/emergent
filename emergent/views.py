@@ -5,8 +5,8 @@ import random
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.shortcuts import redirect
-from django.views.generic import TemplateView
-from braces.views import LoginRequiredMixin
+from django.views.generic import TemplateView, View
+from braces.views import LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin
 
 
 __all__ = (
@@ -81,3 +81,28 @@ class UserListView(LoginRequiredMixin, TemplateView):
         context = super(UserListView, self).get_context_data(**kwargs)
         context['users'] = get_user_model().objects.all()
         return context
+
+class ChatView(TemplateView):
+    template_name = 'emergent/chat.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ChatView, self).get_context_data(**kwargs)
+        return context
+
+
+class ChatSendView(JSONResponseMixin, AjaxResponseMixin, View):
+    def post_ajax(self, request, *args, **kwargs):
+        import pusher
+
+        p = pusher.Pusher(
+            app_id='52066',
+            key='6bb5412badf09454aa87',
+            secret='64834714c694ad3621e4'
+        )
+        p['test_channel'].trigger('my_event', {'message': self.request.POST['message']})
+        json_dict = {
+            "success": True
+        }
+        return self.render_json_response(json_dict)
+
+

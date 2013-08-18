@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, UserListView
+from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, UserListView, ChatView, ChatSendView
 
 from django.contrib.auth import views as auth_views
 
@@ -26,6 +26,11 @@ urlpatterns = patterns(
     url(r'^account/login/$', LoginView.as_view(), name='login'),
     url(r'^account/logout/$', auth_views.logout, {'next_page': '/'}, name='auth_logout'),
     url(r'^account/profile/$', MyProfileView.as_view(), name='me'),
+
+
+    url(r'^chat/$', ChatView.as_view(), name='chatlist'),
+    url(r'^chat/send$', ChatSendView.as_view(), name='chatsend'),
+
 )
 
 from django.conf import settings

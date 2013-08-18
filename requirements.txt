@@ -11,3 +11,4 @@ django-social-auth
 pil
 django-grappelli
 south
+pusher
