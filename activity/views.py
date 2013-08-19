@@ -37,7 +37,7 @@ class HistoryView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View
                 'message': m.html(event.message),
                 'user': event.user.username,
                 'type': event.type,
-                'timestamp': event.timestamp
+                'timestamp': event.timestamp.isoformat()
             })
         return self.render_json_response(json_dict)
 
@@ -48,8 +48,9 @@ class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, Vie
             'message': m.html(self.request.POST['message']),
             'user': self.request.user.username,
             'type': 'chat',
+            'timestamp': datetime.now().isoformat()
         }
-        Event(timestamp=datetime.now(), user=self.request.user, type='chat', message=msg['message']).save()
+        Event(timestamp=msg['timestamp'], user=self.request.user, type='chat', message=msg['message']).save()
         Pusher.send("activity", 'my_event', msg)
         json_dict = {
             "success": True

@@ -6,28 +6,24 @@ function chat_send(editor){
 
 $(function(){
 
-    var chat_message = _.template(
+    var templates = { 
+	chat:  _.template(
         "<div class='chat_message'>" +
-            "<strong><a href='/users/<%= user %>'><%= user %></a></strong> (<%= now %>): <br>" +
+            "<strong><a href='/users/<%= user %>'><%= user %></a></strong> (<%= now.toLocaleDateString() %> <%= now.toLocaleTimeString() %>): <br>" +
             " <%= message %>" +
          "</div>"
-    );
-    var rpg_message = _.template(
+    	),
+    	rpg:  _.template(
         "<div class='rpg_message'>" +
             " <%= message %>" +
          "</div>"
-    );
+	)
+    }
     
     function ws_handler(data) {
         console.log(data);
-        data.now = new Date().toLocaleTimeString();
-        var template;
-        if(data.type == "chat"){
-            template = chat_message;
-        }else if(data.type == "rpg"){
-            template = rpg_message;
-        }
-        $("#events").append(template(data));
+        data.now = new Date(data.timestamp);
+        $("#events").append(templates[data.type](data));
     }
 
     websocket_init(ws_handler);
@@ -56,14 +52,8 @@ $(function(){
     $.get("/activity/history", function(data){
         console.log(data);
         _.each(data.history, function(e,i){
-            e.now = new Date().toLocaleTimeString();
-            var template;
-            if(e.type == "chat"){
-                template = chat_message;
-            }else if(e.type == "rpg"){
-                template = rpg_message;
-            }
-            $("#events").append(template(e));    
+            e.now = new Date(e.timestamp);
+            $("#events").append(templates[e.type](e));    
         })
         
     })
