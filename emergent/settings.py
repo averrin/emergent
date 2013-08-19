@@ -104,6 +104,7 @@ BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_PATH, 'components/')
 
 BOWER_INSTALLED_APPS = (
     'bootstrap',
+    'underscore',
 )
 
 AUTH_USER_MODEL = 'rpg.Hero'

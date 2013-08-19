@@ -60,14 +60,14 @@
     <script type="text/javascript" src='{% static 'jquery/jquery.js' %}'></script>
     <script type="text/javascript" src='{% static 'bootstrap/dist/js/bootstrap.js' %}'></script>
     <script type="text/javascript" src='{% static 'notify.js' %}'></script>
-    <script src="{% static 'epiceditor/js/epiceditor.min.js' %}"></script>
     <script type='text/javascript' src='http://js.pusher.com/2.1/pusher.min.js'></script>
+    <script type="text/javascript" src='{% static 'underscore/underscore.js' %}'></script>
 
     <script type="text/javascript" src='{% static 'js/init.js' %}'></script>
     <script type="text/javascript" src='{% static 'js/rpg.js' %}'></script>
     <script type="text/javascript" src='{% static 'js/main.js' %}'></script>
-
-    <script src="{% static 'js/activity.js' %}"></script>
+    
+    {%  block js_includes %}{% endblock js_includes %}
 
 
     <script>
