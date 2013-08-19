@@ -13,7 +13,7 @@ $(function(){
          "</div>"
     );
 
-    websocket_init()
+    websocket_init();
 
     var editor = new EpicEditor({
         theme: {
@@ -37,7 +37,7 @@ $(function(){
     });
     
     $.get("/activity/history", function(data){
-        console.log(data)
+        console.log(data);
         _.each(data.history, function(e,i){
             e.now = new Date().toLocaleTimeString();
             $("#events").append(chat_message(e));    

@@ -83,4 +83,3 @@ class UserListView(LoginRequiredMixin, TemplateView):
         context = super(UserListView, self).get_context_data(**kwargs)
         context['users'] = get_user_model().objects.all()
         return context
-

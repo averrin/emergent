@@ -55,5 +55,3 @@ class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, Vie
             "success": True
         }
         return self.render_json_response(json_dict)
-
-
