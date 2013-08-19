@@ -1,4 +1,4 @@
-# Create your views here.
+# Create your views here.from datetime import datetime
 
 import os
 import random
@@ -8,13 +8,16 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView, View
 from braces.views import LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin
 import misaka as m
+import pusher
+from activity.models import Event
+from datetime import datetime
 
 
 __all__ = (
     'StreamView',
-    'ChatSendView'
+    'ChatSendView',
+    'HistoryView'
 )
-
 
 
 class StreamView(LoginRequiredMixin, TemplateView):
@@ -25,20 +28,34 @@ class StreamView(LoginRequiredMixin, TemplateView):
         return context
 
 
+class HistoryView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
+    def get_ajax(self, request, *args, **kwargs):
+        history = Event.objects.all().order_by("timestamp")[:10]
+        json_dict = {"history": []}
+        for event in history:
+            json_dict["history"].append({
+                'message': m.html(event.message),
+                'user': event.user.username,
+                'type': event.type,
+                'timestamp': event.timestamp
+            })
+        return self.render_json_response(json_dict)
+
+
 class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
     def post_ajax(self, request, *args, **kwargs):
-        import pusher
-
         p = pusher.Pusher(
             app_id=settings.PUSHER_APPID,
             key=settings.PUSHER_KEY,
             secret=settings.PUSHER_SECRET
         )
-        p['activity'].trigger('my_event', {
+        msg = {
             'message': m.html(self.request.POST['message']),
             'user': self.request.user.username,
             'type': 'chat',
-        })
+        }
+        Event(timestamp=datetime.now(), user=self.request.user, type='chat', message=msg['message']).save()
+        p['activity'].trigger('my_event', msg)
         json_dict = {
             "success": True
         }
