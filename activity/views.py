@@ -8,9 +8,9 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView, View
 from braces.views import LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin
 import misaka as m
-import pusher
 from activity.models import Event
 from datetime import datetime
+from emergent.websockets import Pusher
 
 
 __all__ = (
@@ -44,18 +44,13 @@ class HistoryView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View
 
 class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
     def post_ajax(self, request, *args, **kwargs):
-        p = pusher.Pusher(
-            app_id=settings.PUSHER_APPID,
-            key=settings.PUSHER_KEY,
-            secret=settings.PUSHER_SECRET
-        )
         msg = {
             'message': m.html(self.request.POST['message']),
             'user': self.request.user.username,
             'type': 'chat',
         }
         Event(timestamp=datetime.now(), user=self.request.user, type='chat', message=msg['message']).save()
-        p['activity'].trigger('my_event', msg)
+        Pusher.send("activity", 'my_event', msg)
         json_dict = {
             "success": True
         }
