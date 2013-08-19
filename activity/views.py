@@ -30,9 +30,9 @@ class StreamView(LoginRequiredMixin, TemplateView):
 
 class HistoryView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
     def get_ajax(self, request, *args, **kwargs):
-        history = Event.objects.all().order_by("timestamp")[:10]
+        history = Event.objects.all().order_by("-timestamp")[:10]
         json_dict = {"history": []}
-        for event in history:
+        for event in reversed(history):
             json_dict["history"].append({
                 'message': m.html(event.message),
                 'user': event.user.username,

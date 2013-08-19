@@ -21,9 +21,11 @@ $(function(){
     }
     
     function ws_handler(data) {
-        console.log(data);
+//        console.log(data);
         data.now = new Date(data.timestamp);
-        $("#events").append(templates[data.type](data));
+	var ev = $("#events");
+        ev.append(templates[data.type](data));
+	ev.animate({scrollTop: ev.prop("scrollHeight")}, 500);
     }
 
     websocket_init(ws_handler);
