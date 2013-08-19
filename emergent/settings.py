@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'emergent',
     'zen',
     'rpg',
+    'activity',
 
 )
 

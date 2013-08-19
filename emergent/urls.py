@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, UserListView, ChatView, ChatSendView
+from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, UserListView
 
 from django.contrib.auth import views as auth_views
 
@@ -28,8 +28,7 @@ urlpatterns = patterns(
     url(r'^account/profile/$', MyProfileView.as_view(), name='me'),
 
 
-    url(r'^chat/$', ChatView.as_view(), name='chatlist'),
-    url(r'^chat/send$', ChatSendView.as_view(), name='chatsend'),
+    url(r'^activity/', include('activity.urls'), name='activity'),
 
 )
 

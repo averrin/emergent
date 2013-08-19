@@ -84,30 +84,3 @@ class UserListView(LoginRequiredMixin, TemplateView):
         context['users'] = get_user_model().objects.all()
         return context
 
-class ChatView(LoginRequiredMixin, TemplateView):
-    template_name = 'emergent/chat.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ChatView, self).get_context_data(**kwargs)
-        return context
-
-
-class ChatSendView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin, View):
-    def post_ajax(self, request, *args, **kwargs):
-        import pusher
-
-        p = pusher.Pusher(
-            app_id=settings.PUSHER_APPID,
-            key=settings.PUSHER_KEY,
-            secret=settings.PUSHER_SECRET
-        )
-        p['test_channel'].trigger('my_event', {
-            'message': self.request.POST['message'],
-            'user': self.request.user.username
-        })
-        json_dict = {
-            "success": True
-        }
-        return self.render_json_response(json_dict)
-
-

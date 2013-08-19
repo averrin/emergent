@@ -2,15 +2,14 @@
 {% load static %}
 
 {% block page %}
-<script type='text/javascript' src='http://js.pusher.com/2.1/pusher.min.js'></script>
-
 <link rel="stylesheet" href="{% static 'chat.css' %}"> 
-
 
 <h3>Websocket test:</h3>
     <form id="msg_form">
 	{% csrf_token %}
-        <input id="msg_text"><input type="submit" value="Send"></input>
+        <div id="epiceditor"></div>
+	<input type="submit" value="Send" class="btn btn-default" id="chat_send"></input>
     </form>
     <div id="events"></div>    
+
 {% endblock page %}

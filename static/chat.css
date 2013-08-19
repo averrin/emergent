@@ -2,3 +2,7 @@
 	margin-top: 20px;
 	min-height: 400px;
 }
+#chat_send{
+	float: right;
+	margin-top: 6px;
+}
