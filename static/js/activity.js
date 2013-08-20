@@ -21,11 +21,11 @@ $(function(){
     }
     
     function ws_handler(data) {
-//        console.log(data);
         data.now = new Date(data.timestamp);
-	var ev = $("#events");
+	    var ev = $("#events");
         ev.append(templates[data.type](data));
-	ev.animate({scrollTop: ev.prop("scrollHeight")}, 500);
+	    ev.animate({scrollTop: ev.prop("scrollHeight")}, 500);
+	    $('#events div:last-child').addClass('animated bounceInLeft');
     }
 
     websocket_init(ws_handler);
