@@ -8,6 +8,7 @@ from rpg.models import Title
 from emergent.websockets import Pusher
 from datetime import datetime
 
+
 class AddCoin(JSONResponseMixin, AjaxResponseMixin, View):
     def get_ajax(self, request, *args, **kwargs):
         amount = random.randint(1, 100)
