@@ -1,6 +1,28 @@
 [
     {
         "pk": 1,
+        "model": "rpg.hero",
+        "fields": {
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "titles": [],
+            "groups": [],
+            "credits": 0,
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2013-08-14T16:31:42.360Z",
+            "exp": 0,
+            "user_permissions": [],
+            "guilds": [],
+            "password": "pbkdf2_sha256$10000$iBN5bF7Ds5PY$Rz7LO1HT5zLYc6ciwM7GvHiAgJ0sZURyDSc9xWZ8n48=",
+            "email": "averrin@gmail.com",
+            "date_joined": "2013-08-14T13:02:56.435Z"
+        }
+    },
+    {
+        "pk": 1,
         "model": "rpg.guild",
         "fields": {
             "name": "Developers",
@@ -47,28 +69,6 @@
         "model": "rpg.level",
         "fields": {
             "exp": 150
-        }
-    },
-    {
-        "pk": 1,
-        "model": "rpg.hero",
-        "fields": {
-            "username": "admin",
-            "first_name": "",
-            "last_name": "",
-            "titles": [],
-            "groups": [],
-            "credits": 0,
-            "is_active": true,
-            "is_superuser": true,
-            "is_staff": true,
-            "last_login": "2013-08-14T16:31:42.360Z",
-            "exp": 0,
-            "user_permissions": [],
-            "guilds": [],
-            "password": "pbkdf2_sha256$10000$iBN5bF7Ds5PY$Rz7LO1HT5zLYc6ciwM7GvHiAgJ0sZURyDSc9xWZ8n48=",
-            "email": "averrin@gmail.com",
-            "date_joined": "2013-08-14T13:02:56.435Z"
         }
     }
 ]
