@@ -1,4 +1,9 @@
 #events{
 	margin-top: 20px;
-	min-height: 400px;
+	height: 580px;
+	overflow-y: auto;
+}
+#chat_send{
+	float: right;
+	margin-top: 6px;
 }

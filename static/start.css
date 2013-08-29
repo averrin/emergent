@@ -17,14 +17,14 @@ body {
 }
 
 h1 {
-    color: #fff;
+    color: #2f2f2f;
     font: 700 96px/100px "Trebuchet MS", sans-serif;
     margin: 0;
     padding-bottom: 25px;
     text-shadow:
-        0 1px rgb(225,225,225),
-        0 2px rgb(205,205,205),
-        0 3px rgb(185,185,185),
+        0 1px rgb(40,40,40),
+        0 2px rgb(55,55,55),
+        0 3px rgb(60,60,60),
         0 0 5px rgba(0,0,0,0.1),
         0 1px 3px rgba(0,0,0,0.3),
         0 3px 5px rgba(0,0,0,0.2),

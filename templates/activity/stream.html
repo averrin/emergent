@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page %}
+    <link rel="stylesheet" href="{% static 'chat.css' %}"> 
+    
+    <form id="msg_form">
+        {% csrf_token %}
+        <div id="epiceditor"></div>
+        <input type="submit" value="Send" class="btn btn-default" id="chat_send"></input>
+    </form>
+    
+    <h4>Messages</h4>
+    <div id="events"></div>    
+
+{% endblock page %}
+
+{%  block js_includes %}
+    <script type="text/javascript" src="{% static 'epiceditor/js/epiceditor.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vendor/mousetrap.min.js' %}"></script>
+    <script src="{% static 'js/activity.js' %}"></script>
+{% endblock js_includes %}

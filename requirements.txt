@@ -12,3 +12,6 @@ pil
 django-grappelli
 south
 pusher
+misaka
+houdini
+pygments
