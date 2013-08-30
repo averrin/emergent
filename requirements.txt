@@ -7,7 +7,7 @@ flup
 django-bower
 django-setuptest
 django-braces
-django-social-auth
+django-social-auth>=0.7.26
 pil
 django-grappelli
 south
