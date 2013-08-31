@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page %}
+<div>
+  <h1>Error</h1>
+  <p>Sorry but some error made you impossible to login.</p>
+
+  {% if messages %}
+    Error messages:
+    <ul>
+    {% for msg in messages %}
+        <li class="error">{{ msg.message }} ({{ msg.extra_tags }})</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {% if error_msg %}
+    <p>Details:</p>
+    <p class="error">{{ error_msg }}</p>
+  {% endif %}
+
+  <p>Please try again <a href="{% url 'socialauth_begin' 'github' %}{% if next %}?next={{ next }}{% endif %}">Login with Github</a></p>
+</div>
+{% endblock page %}

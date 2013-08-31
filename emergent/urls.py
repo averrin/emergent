@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, UserListView
+from views import IndexView, StatusView, ProfileView, MyProfileView, LoginView, LoginErrorView, UserListView
 
 from django.contrib.auth import views as auth_views
 
@@ -24,6 +24,7 @@ urlpatterns = patterns(
     url(r'^users/$', UserListView.as_view(), name='profuserlistile'),
     url(r'^account/', include('social_auth.urls')),
     url(r'^account/login/$', LoginView.as_view(), name='login'),
+    url(r'^account/login_error/$', LoginErrorView.as_view(), name='login_error'),
     url(r'^account/logout/$', auth_views.logout, {'next_page': '/'}, name='auth_logout'),
     url(r'^account/profile/$', MyProfileView.as_view(), name='me'),
 
