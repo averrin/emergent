@@ -4,6 +4,7 @@ import os
 import random
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.messages.api import get_messages
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, View
 from braces.views import LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixin
@@ -36,6 +37,15 @@ class LoginView(TemplateView):
         context['next'] = self.request.GET.get('next', None)
         if self.request.user.is_authenticated():
             return redirect('me')
+        return context
+
+
+class LoginErrorView(TemplateView):
+    template_name = 'emergent/login_error.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginErrorView, self).get_context_data(**kwargs)
+        context['messages'] = get_messages(self.request)
         return context
 
 
